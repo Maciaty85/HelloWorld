@@ -3,6 +3,8 @@
 #include <string>
 
 #include "foo/foo.hpp"
+#include "nana/Nana.hpp"
+
 
 using namespace std;
 
@@ -18,6 +20,9 @@ int main()
 
    Foo f{};
    f.foo();
+   
+   Nana nana{};
+   nana.foo();
 
    return 0;
 }

@@ -1,11 +1,11 @@
-set(MODULE_NAME bar)
+set(MODULE_NAME nana)
 
 set(INTERNAL_FILES
-  bar.cpp
+    Nana.cpp
 )
 
 set(PUBLIC_HEADERS
-  bar.hpp
+  Nana.hpp
 )
 
 add_library(
@@ -18,9 +18,13 @@ target_include_directories(
   ${MODULE_NAME}
   PRIVATE 
     ${MODULE_NAME}
+    ${PROJECT_SOURCE_DIR}
   PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}    
 )
-target_link_libraries(${MODULE_NAME})
+target_link_libraries(${MODULE_NAME}
+  PRIVATE
+    lib::foo
+)
 
 add_library(lib::${MODULE_NAME} ALIAS ${MODULE_NAME})
